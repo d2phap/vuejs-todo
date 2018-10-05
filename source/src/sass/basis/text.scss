@@ -1,0 +1,64 @@
+// #region: Responsive alignment ###############
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		.text#{$infix}-left {
+			text-align: left !important;
+		}
+		.text#{$infix}-right {
+			text-align: right !important;
+		}
+		.text#{$infix}-center {
+			text-align: center !important;
+		}
+	}
+}
+// #endregion
+
+// #region: Font sizes ###############
+.fs-h1 {
+	font-size: $fs-h1 !important;
+}
+.fs-h2 {
+	font-size: $fs-h2 !important;
+}
+.fs-h3 {
+	font-size: $fs-h3 !important;
+}
+.fs-h4 {
+	font-size: $fs-h4 !important;
+}
+.fs-body {
+	font-size: $fs-body !important;
+}
+.fs-small {
+	font-size: $fs-small !important;
+}
+.fs-tiny {
+	font-size: $fs-tiny !important;
+}
+// #endregion
+
+// #region: Font weights ###############
+.fw-bolder {
+	font-weight: $fw-bolder !important;
+}
+.fw-bold {
+	font-weight: $fw-bold !important;
+}
+.fw-normal {
+	font-weight: $fw-normal !important;
+}
+.fw-light {
+	font-weight: $fw-light !important;
+}
+// #endregion
+
+
+.text-color-1 {
+	color: $color-1 !important;
+}
+.text-color-2 {
+	color: $color-2 !important;
+}

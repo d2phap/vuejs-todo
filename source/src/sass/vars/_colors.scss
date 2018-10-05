@@ -1,0 +1,14 @@
+$color-1: #2998ac;
+$color-2: #3c58ad;
+
+$color-dark: #000;
+$color-light: #fff;
+
+
+
+$color-bg: #252829;
+$color-bg-hover: lighten($color-bg, 5);
+$color-bg-header: #2d2f2f;
+$color-bg-footer: darken(mix($color-1, $color-2), 15);
+
+$color-text-1: #efefef;

@@ -1,0 +1,45 @@
+@mixin bg-gradient($important: "", $alpha: 0.8) {
+	background-image: linear-gradient(
+		135deg,
+		rgba($color-2, $alpha),
+		rgba($color-1, $alpha),
+		rgba($color-2, $alpha)
+	) #{$important};
+	background-size: 200% 200%;
+}
+
+@mixin bg-gradient-gray($important: "") {
+    background-image: linear-gradient(120deg, $color-bg, lighten($color-bg, 10)) #{$important};
+}
+
+@mixin bg-gradient-highlight($important: "") {
+	background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%) #{$important};
+	background-size: 200% 200%;
+}
+
+@mixin border-gradient() {
+	border-image-source: linear-gradient(
+		135deg,
+		rgba($color-2, 0.8),
+		rgba($color-1, 0.8)
+	);
+	border-image-slice: 1;
+}
+
+@mixin border-gradient-gray() {
+	border-image-source: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+	border-image-slice: 1;
+}
+
+@mixin border-gradient-highlight() {
+	border-image-source: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+	border-image-slice: 1;
+}
+
+@mixin text-gradient() {
+	@include bg-gradient();
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+}

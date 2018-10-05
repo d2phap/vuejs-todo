@@ -1,0 +1,49 @@
+table {
+
+    tr {
+        border-top: $gap/15 solid lighten($color-bg, 10);
+
+        &> th,
+        &> td {
+            padding: $gap/2;
+            border-left: $gap/15 solid lighten($color-bg, 10);
+            transition: all ease 200ms;
+
+            &:last-child {
+                border-right: $gap/15 solid lighten($color-bg, 10);
+            }
+        }
+
+        &> th {
+            font-weight: $fw-bold;
+            background-color: rgba($color-1, 0.15);
+        }
+
+        &:last-child {
+            border-bottom: $gap/15 solid lighten($color-bg, 10);
+        }
+    }
+
+    &.table-striped {
+        tr {
+            
+            &:nth-child(2n+1) {
+                &> td {
+                    background-color: darken($color-bg, 1.5);
+                }
+            }
+        }
+    }
+
+    &.table-hover {
+        tr {
+            
+            &:hover {
+                &> td {
+                    background-color: lighten($color-bg, 5);
+                }
+            }
+        }
+    }
+
+}

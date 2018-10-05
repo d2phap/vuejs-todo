@@ -1,0 +1,67 @@
+:root {
+	--scroll-bar-size: 15px;
+
+	/**
+   * Background color for custom scroll bars.
+   * The color is applied to the thumb part of the scrollbar.
+   */
+	--scroll-bar-thumb-background-color: rgba(0,0,0, 0.7);
+	/**
+	* Background color for custom scroll bars in their active state.
+	* The color is applied to the thumb part of the scrollbar.
+	*/
+	--scroll-bar-thumb-background-color-active: rgba(0,0,0, 1);
+}
+
+::-webkit-scrollbar {
+	width: var(--scroll-bar-size);
+	height: var(--scroll-bar-size);
+	background: transparent;
+	cursor: pointer;
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--scroll-bar-thumb-background-color);
+	border-radius: var(--scroll-bar-size);
+	border-color: transparent;
+	border-style: solid;
+	border-width: calc(var(--scroll-bar-size)/3);
+	background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:active {
+	background-color: var(--scroll-bar-thumb-background-color-active);
+}
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+	border-width: 1px;
+	background-color: var(--scroll-bar-thumb-background-color-active);
+	cursor: pointer;
+}
+
+
+
+
+
+
+body {
+	min-height: 100vh;
+	background-color: $color-bg;
+
+	@supports (not (browser: ie)) {
+		display: grid;
+		grid-template-rows: min-content auto min-content;
+		grid-template-columns: auto;
+		grid-template-areas: "_header" "_body" "_footer";
+	}
+}
+
+#header {
+	grid-area: _header;
+}
+
+#body {
+	grid-area: _body;
+}
+
+#footer {
+	grid-area: _footer;
+}

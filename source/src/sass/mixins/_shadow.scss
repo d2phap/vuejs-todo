@@ -1,0 +1,36 @@
+@mixin shadow($style: "button", $shadow: "") {
+
+    @if ($shadow != "") {
+        $shadow: ", " + #{$shadow};
+    }
+
+    @if ($style == "button") {
+        box-shadow: 0 $gap $gap*2 (-$gap) rgba(#000, 0.2) #{$shadow};
+    }
+}
+
+@mixin btn-shadow($style: "button", $shadow: "") {
+    @if ($shadow != "") {
+        $shadow: ", " + #{$shadow};
+    }
+
+    @if ($style == "button") {
+        box-shadow: (-$gap/4) $gap/4 $gap*0.75 (-$gap/4) rgba(#000, 0.2) #{$shadow};
+    }
+}
+
+@mixin btn-hover($color: $color-bg) {
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 200ms ease;
+    transform: translateY(-$gap/7);
+    box-shadow: 0 $gap $gap (-$gap/2) rgba(#000, 0.2);
+}
+
+
+@mixin btn-active($color: $color-bg) {
+    transition: all 50ms ease;
+    transform: translateY(0);
+    box-shadow: 0 $gap/2 $gap (-$gap/2) rgba(#000, 0.3);
+}

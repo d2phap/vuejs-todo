@@ -1,0 +1,33 @@
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: $gap/2 $gap*1.5;
+    background-color: $color-bg;
+    border: 0;
+    color: $color-text-1;
+    transition: all 200ms ease;
+    
+    @include bg-gradient-gray();
+
+    &:hover,
+    &:focus {
+        @include btn-hover();
+    }
+    &:active {
+        @include btn-active();
+    }
+
+
+    &.btn-primary {
+        @include bg-gradient();
+        color: var(--color-light);
+
+        &:hover,
+        &:focus {
+            @include btn-hover(#30618d);
+        }
+        &:active {
+            @include btn-active(#30618d);
+        }
+    }
+}

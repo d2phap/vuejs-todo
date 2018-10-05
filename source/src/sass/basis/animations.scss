@@ -1,0 +1,14 @@
+@keyframes slideInDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-($gap*2));
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.ani-slideInDown {
+	animation: slideInDown 1000ms ease;
+}
