@@ -1,5 +1,13 @@
 <template>
-	<div class="about">
-		<h1>This is an about page</h1>
+	<div class="ani-slideInDown text-center">
+		<h2 class="fs-h2">
+			Duong Dieu Phap
+		</h2>
+
+		<p>
+			<a href="https://github.com/d2phap/vuejs-todo" rel="noopener noreferer">
+				https://github.com/d2phap/vuejs-todo
+			</a>
+		</p>
 	</div>
 </template>

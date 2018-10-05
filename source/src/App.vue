@@ -1,29 +1,18 @@
 <template>
-	<div id="app">
-		<div id="nav">
-			<router-link to="/">Home</router-link> |
+	<div id="app" class="container py-5">
+		<h1 class="fs-h1 text-center">
+			Vuejs Todo app
+		</h1>
+
+		<div class="nav text-center mt-3">
+			<router-link to="/">Todos</router-link>
 			<router-link to="/about">About</router-link>
 		</div>
-		<router-view />
+
+		<div class="main-content mt-5">
+			<router-view />
+		</div>
+		
 	</div>
 </template>
 
-<style lang="scss">
-	#app {
-		font-family: "Avenir", Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
-	}
-	#nav {
-		padding: 30px;
-		a {
-			font-weight: bold;
-			color: #2c3e50;
-			&.router-link-exact-active {
-				color: #42b983;
-			}
-		}
-	}
-</style>
