@@ -1,0 +1,52 @@
+input[type="checkbox"].checkbox {
+    position: absolute;
+    visibility: hidden;
+    left: -9999px;
+
+    &+ label {
+        position: relative;
+        width: $gap*1.5;
+        height: $gap*1.5;
+        margin-bottom: 0;
+        border: $gap/10 solid lighten($color-bg-hover, 20);
+        transition: all ease 300ms;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+            width: $gap;
+            height: $gap/2;
+            border-bottom: $gap/10 solid transparent;
+            border-left: $gap/10 solid transparent;
+            transition: all ease 200ms;
+        }
+
+        &:hover {
+            cursor: pointer;
+            border-color: $color-1;
+            transform: scale(1.2);
+        }
+        &:active {
+            transition: all ease 100ms;
+            transform: scale(0.9);
+        }
+    }
+
+    &:checked {
+        &+ label {
+            border-color: transparent;
+
+            &:before {
+                border-color: $color-1;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,109 @@
+.list {
+    list-style: none;
+    padding-left: 0;
+
+    &> .list-item {
+        background-color: $color-bg-hover;
+        padding: $gap/2 $gap;
+        margin: $gap/10 0;
+        box-shadow: 0 0 0 $gap/10 darken($color-bg-hover, 7);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all ease 200ms;
+
+        .text {
+            display: inline-block;
+            margin-right: auto;
+        }
+
+        .checkbox {
+            &+ label {
+                flex: 0 0 auto;
+            }   
+            
+            &:checked {
+                &~ .text {
+                    text-decoration: line-through;
+                }
+            }
+        }
+
+        .icon-delete {
+            display: inline-block;
+            position: relative;
+            width: $gap*2;
+            height: $gap*2;
+            flex: 0 0 auto;
+            margin-left: auto;
+            visibility: hidden;
+            opacity: 0;
+            transition: all ease 300ms;
+
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+
+                width: $gap;
+                height: $gap/10;
+                background-color: $color-error;
+                transition: all ease 300ms;
+            }
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                &::before {
+                    transform: scale(1.3) rotate(45deg);
+                }
+    
+                &::after {
+                    transform: scale(1.3) rotate(-45deg);
+                }
+            }
+
+            &:active {
+                &::before {
+                    transition: all ease 100ms;
+                    transform: scale(0.9) rotate(45deg);
+                }
+    
+                &::after {
+                    transition: all ease 100ms;
+                    transform: scale(0.9) rotate(-45deg);
+                }
+            }
+        }
+
+        &.done {
+            background-color: lighten($color-dark, 18);
+            color: darken($color-text-1, 30);
+        }
+
+        &:hover {
+            .icon-delete {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        &:not(.done):hover {
+            background-color: lighten($color-bg-hover, 5);
+        }
+    }
+}
