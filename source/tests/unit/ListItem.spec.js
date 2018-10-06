@@ -1,5 +1,5 @@
 import { expect } from "chai"
-import { shallowMount, mount } from "@vue/test-utils"
+import { shallowMount } from "@vue/test-utils"
 import ListItem from "@/components/ListItem.vue"
 
 describe("ListItem.vue", () => {
@@ -37,7 +37,7 @@ describe("ListItem.vue", () => {
 
     
     it("emit eventTaskStatusChange event when check changed", () => {
-        const wrapper = mount(ListItem)
+        const wrapper = shallowMount(ListItem)
         const chk = wrapper.find(`[type="checkbox"]`)
 
         chk.trigger("change")
@@ -52,7 +52,7 @@ describe("ListItem.vue", () => {
     
 
     it("emit eventTaskDelete event when check changed", () => {
-        const wrapper = mount(ListItem)
+        const wrapper = shallowMount(ListItem)
         const btn = wrapper.find(".icon-delete")
 
         btn.trigger("click")
