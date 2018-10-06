@@ -20,7 +20,10 @@ describe("ListItem.vue", () => {
 			propsData: { isDone }
         })
         
-		expect(wrapper.classes()).to.contain("done")
+        const isChecked = wrapper.find(`[type="checkbox"]`).is(":checked")
+        
+        expect(wrapper.classes()).to.contain("done")
+        expect(isChecked).to.be.equal(true)
     })
 
     

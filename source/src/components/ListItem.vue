@@ -1,6 +1,6 @@
 <template>
 	<li class="list-item" :class="{ done: isDone }">
-        <input type="checkbox" class="checkbox" :id="idComputed" @change="onTaskStatusChange">
+        <input type="checkbox" class="checkbox" :id="idComputed" @change="onTaskStatusChange" :checked="isDone">
         <label class="mr-3" :for="idComputed"></label>
         <span class="text">
             {{ text }}
