@@ -1,17 +1,19 @@
 <template>
-	<div class="home">
-		<HelloWorld msg="Welcome to Your Vue.js App" />
+	<div class="ani-slideInDown row justify-content-center">
+		<div class="col-lg-6">
+			<ToDoInput />
+		</div>
 	</div>
 </template>
 
 <script>
 	// @ is an alias to /src
-	import HelloWorld from '@/components/HelloWorld.vue'
+	import ToDoInput from '@/components/ToDoInput.vue'
 
 	export default {
-		name: 'home',
+		name: "home",
 		components: {
-			HelloWorld
+			ToDoInput
 		}
 	}
 </script>
