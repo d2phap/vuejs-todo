@@ -1,11 +1,11 @@
 <template>
-	<li class="list-item">
-        <input type="checkbox" class="checkbox" :id="id">
-        <label class="mr-3" :for="id"></label>
+	<li class="list-item" :class="{ done: isDone }">
+        <input type="checkbox" class="checkbox" :id="idComputed" @change="onTaskStatusChange">
+        <label class="mr-3" :for="idComputed"></label>
         <span class="text">
-            Morbi in laoreet quam. Sed molestie faucibus ultrices. in laoreet quam. Sed molestie faucibus ultrices
+            {{ text }}
         </span>
-        <span class="icon-delete"></span>
+        <span class="icon-delete" @click="onTaskDelete"></span>
     </li>
 </template>
 
@@ -14,8 +14,37 @@
         name: "ListItem",
         props: {
             id: {
+                type: Number,
+                default: 0
+            },
+            text: {
                 type: String,
-                default: () => `chkItem-${Math.ceil(Math.random() * 1000)}`
+                default: ""
+            },
+            isDone: {
+                type: Boolean,
+                default: false
+            }
+        },
+        computed: {
+            idComputed() {
+                return `item-${this.id}`
+            }
+        },
+        methods: {
+            /**
+             * Event: on task status changed
+             */
+            onTaskStatusChange(e) {
+                const checked = e.target.checked
+                this.$emit("eventTaskStatusChange", this.id, checked)
+            },
+
+            /**
+             * Event: on task deleted
+             */
+            onTaskDelete(e) {
+                this.$emit("eventTaskDelete", this.id)
             }
         }
     }
