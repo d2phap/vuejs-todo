@@ -1,0 +1,84 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Vuejs ToDo App",
+		"_postman_id": "053418cc-98a4-8c05-7a80-71f1751b1d61",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve the Entry Point [GET]",
+			"request": {
+				"url": "http://private-0e4345-d2phap.apiary-mock.com/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Tasks [GET /tasks]",
+			"request": {
+				"url": "http://private-0e4345-d2phap.apiary-mock.com/tasks",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create a New Task [POST /tasks]",
+			"request": {
+				"url": "http://private-0e4345-d2phap.apiary-mock.com/tasks",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"taskName\": \"Buy toys for my niece\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Task's Status [PUT /tasks/{id}]",
+			"request": {
+				"url": "http://private-0e4345-d2phap.apiary-mock.com/tasks/1538882607706",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"isDone\": true\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Task [DELETE /tasks/{id}]",
+			"request": {
+				"url": "http://private-0e4345-d2phap.apiary-mock.com/tasks/1538882607706",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
