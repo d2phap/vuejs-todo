@@ -41,6 +41,10 @@ npm run build
 npm run test:unit
 ```
 
+## Deployment
+- Set correct `baseUrl` in [/client/vue.config.js](https://github.com/d2phap/vuejs-todo/blob/master/client/vue.config.js)
+- Compile and minifie source code for production: `npm run build`
+- Upload all files in `/dist` folder to the hosting
 
 ## API blueprint design
 #### API design
