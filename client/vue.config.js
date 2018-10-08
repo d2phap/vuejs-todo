@@ -1,3 +1,3 @@
 module.exports = {
-  baseUrl: '/vuejs-todo-app/'
+  baseUrl: '/vuejs-todo/'
 }
