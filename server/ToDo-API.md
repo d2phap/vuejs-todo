@@ -1,4 +1,5 @@
 FORMAT: 1A
+HOST: http://private-0e4345-d2phap.apiary-mock.com/
 
 # ToDo API
 
@@ -73,7 +74,6 @@ You may update your task's status using this action. It takes a JSON object cont
 + Request (application/json)
 
         {
-            "id": 1538882607706,
             "isDone": true
         }
 
