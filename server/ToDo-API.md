@@ -28,14 +28,14 @@ Resources related to todo tasks in the API.
 
         [
             {
-                id: 1538882607706,
-                text: "Buy toys for my niece",
-                isDone: true
+                "id": 1538882607706,
+                "text": "Buy toys for my niece",
+                "isDone": true
             },
             {
-                id: 1538882614514,
-                text: "Rely John's email",
-                isDone: false
+                "id": 1538882614514,
+                "text": "Rely John's email",
+                "isDone": false
             }
         ]
 
