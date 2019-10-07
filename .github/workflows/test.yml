@@ -1,0 +1,16 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+    - run: npm ci
+      working-directory: client
+    - run: npm run test:unit
+      working-directory: client
